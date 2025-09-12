@@ -1,44 +1,27 @@
-"use client";
-import React from "react";
 import Link from "next/link";
 
 type FooterProps = {
-  left?: string;
-  right?: string;
-  goback?: string;
+  left: string;
+  right: string;
+  goback: string;
   link?: string;
+  onRightClick?: () => void;
 };
 
-const Footer: React.FC<FooterProps> = ({
-  left = "Back",
-  right = "Next",
-  goback,
-  link,
-}) => {
+export default function Footer({ left, right, goback, link, onRightClick }: FooterProps) {
   return (
-    <div className="flex justify-between items-center px-5 py-4 bg-white">
-      {goback ? (
-        <Link
-          href={goback}
-          className="text-blue-200 font-medium px-4 py-2 rounded hover:bg-gray-200 transition"
-        >
-          {left}
-        </Link>
+    <div className="flex justify-between p-4 bg-gray-50 mt-6">
+      <Link href={goback} className="text-gray-700">{left}</Link>
+
+      {onRightClick ? (
+        <button onClick={onRightClick} className="bg-blue-600 text-white px-4 py-2 rounded">
+          {right}
+        </button>
       ) : (
-        <div />
-      )}
-      {link ? (
-        <Link
-          href={link}
-          className="bg-blue-950 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
-        >
+        <Link href={link || "#"} className="bg-blue-600 text-white px-4 py-2 rounded">
           {right}
         </Link>
-      ) : (
-        <div />
       )}
     </div>
   );
-};
-
-export default Footer;
+}

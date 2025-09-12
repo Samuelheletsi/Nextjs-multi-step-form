@@ -2,13 +2,19 @@
 import React, { createContext, useContext, useState } from "react";
 
 // Define the form data shape
+type Addon = {
+  name: string;
+  price: string;
+};
+
 type FormData = {
   name: string;
   email: string;
   tel: string;
   plan: string;   // e.g. "Arcade", "Advanced", "Pro"
   price: string;  // e.g. "$90/yr" or "$9/mo"
-  billing: "monthly" | "yearly"; // billing frequency
+  billing: "monthly" | "yearly";
+  addons: Addon[]; // selected add-ons
 };
 
 type FormContextType = {
@@ -28,6 +34,7 @@ export const FormProvider = ({ children }: { children: React.ReactNode }) => {
     plan: "",
     price: "",
     billing: "monthly",
+    addons: [],
   });
 
   // Merge new values into state
@@ -45,7 +52,8 @@ export const FormProvider = ({ children }: { children: React.ReactNode }) => {
 // Hook for easier usage
 export const useFormContext = () => {
   const context = useContext(FormContext);
-  if (!context)
+  if (!context) {
     throw new Error("useFormContext must be used inside FormProvider");
+  }
   return context;
 };
