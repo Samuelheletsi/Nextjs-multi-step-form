@@ -16,11 +16,11 @@ const Footer: React.FC<FooterProps> = ({
   link,
 }) => {
   return (
-    <div className="flex justify-between items-center px-5 py-4 bg-gray-100">
+    <div className="flex justify-between items-center px-5 py-4 bg-white">
       {goback ? (
         <Link
           href={goback}
-          className="text-blue-600 font-medium px-4 py-2 rounded hover:bg-gray-200 transition"
+          className="text-blue-200 font-medium px-4 py-2 rounded hover:bg-gray-200 transition"
         >
           {left}
         </Link>
@@ -30,7 +30,7 @@ const Footer: React.FC<FooterProps> = ({
       {link ? (
         <Link
           href={link}
-          className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
+          className="bg-blue-950 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
         >
           {right}
         </Link>
