@@ -19,10 +19,12 @@ export default function RootLayout({
         <FormProvider>
           <main
             className="
-              bg-white w-full max-w-6xl 
+              bg-cyan-100 sm:bg-white
+              w-full max-w-6xl 
               min-h-[600px] 
-              rounded-xl shadow-lg 
+              rounded-xl sm:shadow-lg 
               flex flex-col lg:flex-row
+              lg:gap-6
               relative overflow-hidden
             "
           >
@@ -33,9 +35,9 @@ export default function RootLayout({
             <section
               className="
                 relative
-                w-[90%] max-w-md mx-auto
+                w-[100%] max-w-md mx-auto
                 -mt-20 sm:-mt-24   /* lift card over header on small screens */
-                bg-white rounded-lg shadow-lg
+                bg-white rounded-lg shadow-lg 
                 p-6
                 lg:static lg:mt-0 lg:mx-0 lg:w-auto lg:flex-1
                 lg:rounded-none lg:shadow-none

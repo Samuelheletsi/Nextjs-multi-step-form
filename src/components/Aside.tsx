@@ -21,8 +21,8 @@ export default function Aside() {
         justify-center lg:justify-start items-center lg:items-start
         w-full lg:w-72
         h-[160px] lg:h-auto   /* lowered mobile height */
-        pt-2 lg:pt-10        /* reduce top padding on mobile */
-        px-6 lg:px-8
+        -pt-2 lg:pt-10        /* reduce top padding on mobile */
+        px-6 lg:px-8 
         text-white
         bg-[url('/images/bg-sidebar-mobile.svg')] 
         lg:bg-[url('/images/bg-sidebar-desktop.svg')]
@@ -33,7 +33,7 @@ export default function Aside() {
       <div
         className="
           flex flex-row lg:flex-col gap-6 lg:gap-8
-          -mt-3 lg:mt-0   /* shift circles up on small screens */
+          -mt-18 lg:mt-0   /* shift circles up on small screens */
         "
       >
         {steps.map((step) => {
