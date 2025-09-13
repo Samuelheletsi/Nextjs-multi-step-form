@@ -39,7 +39,7 @@ export default function FinishPage() {
         <h1 className="text-2xl font-bold mb-4">Finishing Up</h1>
         <p>Double check everything looks OK before confirming.</p>
 
-        <div className="mt-4 p-4 rounded-md bg-blue-100">
+        <div className="mt-4 p-4 rounded-md ">
           {/* Plan info */}
           <div className="flex justify-between items-center pb-3 border-b border-gray-300">
             <div>

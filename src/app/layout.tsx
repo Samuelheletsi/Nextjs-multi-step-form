@@ -23,21 +23,24 @@ export default function RootLayout({
               min-h-[600px] 
               rounded-xl shadow-lg 
               flex flex-col lg:flex-row
-              overflow-hidden
+              relative overflow-hidden
             "
           >
-            {/* Sidebar */}
+            {/* Sidebar / Mobile Header */}
             <Aside />
 
-            {/* Content */}
+            {/* Page Content */}
             <section
               className="
-                w-full lg:flex-1
-                -mt-16 lg:mt-0   /* overlap the sidebar image slightly on small screens */
-                bg-white rounded-lg shadow-lg 
+                relative
+                w-[90%] max-w-md mx-auto
+                -mt-20 sm:-mt-24   /* lift card over header on small screens */
+                bg-white rounded-lg shadow-lg
                 p-6
+                lg:static lg:mt-0 lg:mx-0 lg:w-auto lg:flex-1
                 lg:rounded-none lg:shadow-none
                 flex flex-col justify-between
+                z-10
               "
             >
               {children}
