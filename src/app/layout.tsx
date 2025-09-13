@@ -20,29 +20,28 @@ export default function RootLayout({
           <main
             className="
               bg-white w-full max-w-6xl 
-              min-h-[500px] 
+              min-h-[600px] 
               rounded-xl shadow-lg 
-              flex flex-col lg:flex-row 
-              relative overflow-hidden
+              flex flex-col lg:flex-row
+              overflow-hidden
             "
           >
-            {/* Sidebar / Background */}
-            <div className="relative w-full lg:w-auto">
-              <Aside />
+            {/* Sidebar */}
+            <Aside />
 
-              {/* Page content overlays Aside on small screens */}
-              <section
-                className="
-                  absolute top-28 left-1/2 -translate-x-1/2
-                  w-[90%] bg-white rounded-lg shadow-lg p-6
-                  lg:static lg:translate-x-0 lg:top-0 lg:left-0 
-                  lg:w-auto lg:flex-1 lg:rounded-none lg:shadow-none
-                  flex flex-col justify-between
-                "
-              >
-                {children}
-              </section>
-            </div>
+            {/* Content */}
+            <section
+              className="
+                w-full lg:flex-1
+                -mt-16 lg:mt-0   /* overlap the sidebar image slightly on small screens */
+                bg-white rounded-lg shadow-lg 
+                p-6
+                lg:rounded-none lg:shadow-none
+                flex flex-col justify-between
+              "
+            >
+              {children}
+            </section>
           </main>
         </FormProvider>
       </body>
