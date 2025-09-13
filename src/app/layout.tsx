@@ -16,15 +16,33 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-cyan-100 min-h-screen flex justify-center items-center p-4">
-        <FormProvider> 
-          <main className="bg-white w-full max-w-6xl min-h-[500px] rounded-xl shadow-lg flex flex-col lg:flex-row overflow-hidden">
-            {/* Sidebar */}
-            <Aside />
+        <FormProvider>
+          <main
+            className="
+              bg-white w-full max-w-6xl 
+              min-h-[500px] 
+              rounded-xl shadow-lg 
+              flex flex-col lg:flex-row 
+              relative overflow-hidden
+            "
+          >
+            {/* Sidebar / Background */}
+            <div className="relative w-full lg:w-auto">
+              <Aside />
 
-            {/* Page content */}
-            <section className="flex-1 p-6 flex flex-col justify-between">
-              {children}
-            </section>
+              {/* Page content overlays Aside on small screens */}
+              <section
+                className="
+                  absolute top-28 left-1/2 -translate-x-1/2
+                  w-[90%] bg-white rounded-lg shadow-lg p-6
+                  lg:static lg:translate-x-0 lg:top-0 lg:left-0 
+                  lg:w-auto lg:flex-1 lg:rounded-none lg:shadow-none
+                  flex flex-col justify-between
+                "
+              >
+                {children}
+              </section>
+            </div>
           </main>
         </FormProvider>
       </body>
