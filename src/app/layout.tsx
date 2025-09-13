@@ -35,7 +35,7 @@ export default function RootLayout({
             <section
               className="
                 relative
-                w-[100%] max-w-md mx-auto
+                w-[90%] max-w-md mx-auto
                 -mt-20 sm:-mt-24   /* lift card over header on small screens */
                 bg-white rounded-lg shadow-lg 
                 p-6
