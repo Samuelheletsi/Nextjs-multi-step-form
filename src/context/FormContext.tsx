@@ -20,30 +20,39 @@ type FormData = {
 type FormContextType = {
   formData: FormData;
   setFormData: (data: Partial<FormData>) => void;
+  resetFormData: () => void; // <-- new
 };
 
 // Create context
 const FormContext = createContext<FormContextType | undefined>(undefined);
 
+// Default blank values
+const defaultFormData: FormData = {
+  name: "",
+  email: "",
+  tel: "",
+  plan: "",
+  price: "",
+  billing: "monthly",
+  addons: [],
+};
+
 // Provider component
 export const FormProvider = ({ children }: { children: React.ReactNode }) => {
-  const [formData, setFormDataState] = useState<FormData>({
-    name: "",
-    email: "",
-    tel: "",
-    plan: "",
-    price: "",
-    billing: "monthly",
-    addons: [],
-  });
+  const [formData, setFormDataState] = useState<FormData>(defaultFormData);
 
   // Merge new values into state
   const setFormData = (data: Partial<FormData>) => {
     setFormDataState((prev) => ({ ...prev, ...data }));
   };
 
+  // Reset to defaults
+  const resetFormData = () => {
+    setFormDataState(defaultFormData);
+  };
+
   return (
-    <FormContext.Provider value={{ formData, setFormData }}>
+    <FormContext.Provider value={{ formData, setFormData, resetFormData }}>
       {children}
     </FormContext.Provider>
   );
