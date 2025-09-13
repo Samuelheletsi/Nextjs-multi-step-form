@@ -16,7 +16,7 @@ export default function FinishPage() {
       alert("Please complete all required fields and selections!");
       return;
     }
-    router.push("/thankyou");
+    router.push("/thank-you");
   };
 
   const billing = formData.billing || "monthly";
