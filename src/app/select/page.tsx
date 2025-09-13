@@ -43,7 +43,7 @@ export default function SelectPage() {
               width={30}
               height={40}
             />
-            <h3 className="font-bold mt-7">Arcade</h3>
+            <h3 className="font-bold mt-5">Arcade</h3>
             <p>{billing === "yearly" ? "$90/yr" : "$9/mo"}</p>
             {billing === "yearly" && (
               <span className="text-xs text-blue-600">2 months free</span>
@@ -70,7 +70,7 @@ export default function SelectPage() {
               width={30}
               height={40}
             />
-            <h3 className="font-bold mt-7">Advanced</h3>
+            <h3 className="font-bold mt-5">Advanced</h3>
             <p>{billing === "yearly" ? "$120/yr" : "$12/mo"}</p>
             {billing === "yearly" && (
               <span className="text-xs text-blue-600">2 months free</span>
@@ -94,7 +94,7 @@ export default function SelectPage() {
               width={30}
               height={40}
             />
-            <h3 className="font-bold mt-7">Pro</h3>
+            <h3 className="font-bold mt-5">Pro</h3>
             <p>{billing === "yearly" ? "$150/yr" : "$15/mo"}</p>
             {billing === "yearly" && (
               <span className="text-xs text-blue-600">2 months free</span>

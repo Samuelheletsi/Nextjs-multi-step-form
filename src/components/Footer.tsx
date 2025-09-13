@@ -10,7 +10,7 @@ type FooterProps = {
 
 export default function Footer({ left, right, goback, link, onRightClick }: FooterProps) {
   return (
-    <div className="flex justify-between p-4 bg-gray-50 mt-6">
+    <div className="flex justify-between p-4 bg-gray-50 mt-4">
       <Link href={goback} className="text-gray-700">{left}</Link>
 
       {onRightClick ? (
